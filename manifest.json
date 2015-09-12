@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "name": "VK playlist maker",
+  "description": "Make .m3u playlist from vk. Helps you listen music via any audio player(without browser)",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["https://vk.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "icons": {
+    "48": "icon3.png"
+  },
+
+  "permissions": [
+    "tabs", "https://vk.com/*"
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "pop-up.html"
+  },
+
+  //TODO define this place
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
